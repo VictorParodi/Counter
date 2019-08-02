@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  final myTextStyle = TextStyle(fontSize: 25.0);
+
   @override
   Widget build(context) {
     return Scaffold(
@@ -9,7 +11,13 @@ class HomePage extends StatelessWidget {
       ),
 
       body: Center(
-        child: Text('Great App!')
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Clicks amount', style: myTextStyle),
+            Text('0', style: myTextStyle)
+          ],
+        )
       ),
     );
   }
