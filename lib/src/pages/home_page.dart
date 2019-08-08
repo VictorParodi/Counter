@@ -19,6 +19,11 @@ class HomePage extends StatelessWidget {
           ],
         )
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print('It works'),
+        child: Icon(Icons.add),
+      ),
     );
   }
 }

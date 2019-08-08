@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import './pages/home_page.dart';
+import './pages/counter_page.dart';
 
 class App extends StatelessWidget {
   @override
   Widget build(context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Center(
-        child: new HomePage(),
+        child: new CounterPage(),
       ),
     );
   }
