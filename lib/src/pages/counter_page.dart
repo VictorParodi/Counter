@@ -28,13 +28,51 @@ class _CounterPageState extends State<CounterPage> {
         )
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _counter++;
-          setState((){});
-        },
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: _renderButtons(),
     );
+  }
+
+  Widget _renderButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+
+      children: <Widget>[
+        SizedBox(width: 25.0),
+
+        FloatingActionButton(
+          onPressed: _reset,
+          child: Icon(Icons.exposure_zero),
+        ),
+
+        Expanded(child: SizedBox()),
+
+        FloatingActionButton(
+          onPressed: _remove,
+          child: Icon(Icons.remove),
+        ),
+
+        SizedBox(width: 5.0,),
+
+        FloatingActionButton(
+          onPressed: _add,
+          child: Icon(Icons.add),
+        )
+      ],
+    );
+  }
+
+  void _add() {
+    _counter++;
+    setState(() {});
+  }
+
+  void _remove() {
+    _counter--;
+    setState(() {});
+  }
+
+  void _reset() {
+    _counter = 0;
+    setState(() {});
   }
 }
